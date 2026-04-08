@@ -1,0 +1,7 @@
+<launch>
+   <include  file="$(find astra_camera)/launch/astra.launch"/>
+        <node name="usb_cam" pkg="usb_cam" type="app_read.py" >
+            <remap from="/usb_cam/image_raw/compressed" to="/image_raw/compressed"/>
+        </node>
+</launch>
+

@@ -1,0 +1,20 @@
+<launch>
+  <include file="$(find wheeltec_arm_pick)/launch/base_serial.launch" >
+    <arg name="if_arm_pick_color" value="true"/>
+    <arg name="use_camera" value="true"/>
+  </include>
+</launch>
+<!-- <launch>
+    <arg name="car_mode" default="mini_mec_six_arm"/>
+    <arg name="moveit_num" value="six_arm"/>
+<group>
+        <include file="$(find wheeltec_arm_pick)/launch/car_location_color.launch">
+            <arg name="car_mode" value="$(arg car_mode)"/>
+            <arg name="moveit_num" value="$(arg moveit_num)"/>
+        </include>
+        <include file="$(find wheeltec_arm_pick)/launch/visualTracker.launch">
+            <arg name="moveit_num" value="$(arg moveit_num)"/>
+        </include>
+        <node name="$(arg moveit_num)_control" pkg="wheeltec_arm_pick" type="$(arg moveit_num)_pick_and_put" output="screen"/>
+    </group>
+</launch>     -->

@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find wheeltec_arm_pick)/launch/dtb.launch" >
+    <arg name="arm_put" value="true"/>
+  </include>
+</launch>

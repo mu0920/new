@@ -1,0 +1,24 @@
+<launch>
+  <arg name="moveit_num" default="six_arm"/>
+  <node name="$(arg moveit_num)_visual_tracker" pkg="wheeltec_arm_pick" type="$(arg moveit_num)_visualTracker.py" output="screen">
+    <!-- color or the target in HSV color space -->
+    <rosparam if="$(eval moveit_num=='six_arm')" ns='target'>
+      upper : [0, 43, 46]
+      lower : [10, 255, 255]
+      green_upper : [35, 43, 46]
+      green_lower : [77, 255, 255]
+      blue_upper : [0, 60, 40]
+      blue_lower : [30, 255, 255]
+      yellow_upper : [80, 100, 40]
+      yellow_lower : [100, 255, 255]
+    </rosparam>
+    <rosparam ns='pictureDimensions'>
+      <!-- Picture dimensions in pixel -->
+      pictureHeight: 240
+      pictureWidth: 320
+      <!-- Viewing angle of the camera in one direction in Radians -->
+      verticalAngle: 0.43196898986859655
+      horizontalAngle: 0.5235987755982988
+    </rosparam>
+  </node>
+</launch>
